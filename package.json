@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/b1tt0/plbot/issues"
   },
-  "homepage": "https://github.com/b1tt0/plbot#readme"
+  "homepage": "https://github.com/b1tt0/plbot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
 }
