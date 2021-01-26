@@ -1,0 +1,19 @@
+{
+  "name": "plbot",
+  "version": "1.0.0",
+  "description": "Exclusive Discord bot.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b1tt0/plbot.git"
+  },
+  "author": "b1tt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/b1tt0/plbot/issues"
+  },
+  "homepage": "https://github.com/b1tt0/plbot#readme"
+}
