@@ -8,8 +8,10 @@ bot.on("message", (msg) => {
   if (!msg.content.startsWith(config.prefix))
     return;
 
-  let args = msg.slice(config.prefix.length).split(" ");
+  let args = msg.content.slice(config.prefix.length).split(" ");
   let cmd = args[0].toLowerCase();
+  console.log(args);
+  console.log(cmd);
 
   if (cmd == "ping") {
     msg.reply("pong");
