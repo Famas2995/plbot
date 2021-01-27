@@ -14,7 +14,7 @@ bot.on("message", (msg) => {
   console.log(cmd);
 
   if (cmd == "ping") {
-    msg.reply("pong");
+    msg.reply("pog");
   }
 });
 
