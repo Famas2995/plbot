@@ -3,7 +3,10 @@ const bot = new Client();
 const config = require("./config.json");
 
 // im testing shit out so dont mind the bad code
-bot.once("ready", () => console.log("logged in"));
+bot.once("ready", () => {
+  console.log("logged in");
+  bot.user.setActivity("PAHC's Lounge | p!", { type: "LISTENING" })
+});
 bot.on("message", (msg) => {
   if (!msg.content.startsWith(config.prefix))
     return;
