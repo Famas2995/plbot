@@ -10,8 +10,6 @@ bot.on("message", (msg) => {
 
   let args = msg.content.slice(config.prefix.length).split(" ");
   let cmd = args[0].toLowerCase();
-  console.log(args);
-  console.log(cmd);
 
   if (cmd == "ping") {
     msg.reply("pog");
