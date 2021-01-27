@@ -3,20 +3,21 @@ const bot = new Client();
 const config = require("./config.json");
 
 // im testing shit out so dont mind the bad code
+
 bot.once("ready", () => {
   console.log("logged in");
-  bot.user.setActivity("PAHC's Lounge | p!", { type: "LISTENING" })
+  bot.user.setActivity("PAHC's Lounge | p!", { type: "LISTENING" });
 });
-bot.on("message", (msg) => {
-  if (!msg.content.startsWith(config.prefix))
-    return;
 
+bot.on("message", (msg) => {
+  // ignore bots and normal messages
+  if (!msg.content.startsWith(config.prefix) || msg.author.bot) return;
+
+  // split the message into arguments aka keywords
   let args = msg.content.slice(config.prefix.length).split(" ");
   let cmd = args[0].toLowerCase();
 
-  if (cmd == "ping") {
-    msg.reply("pog");
-  }
+  
 });
 
 bot.login(process.env.TOKEN);
