@@ -6,7 +6,7 @@ const config = require("./config.json");
 
 // im testing shit out so dont mind the bad code
 bot.once("ready", () => {
-  let files = fs.readdirSync(config.cmds).filter(file => file.endsWith(".js"));
+  let files = readdirSync(config.cmds).filter(file => file.endsWith(".js"));
   for (let file of files) {
     let c = require(`${config.cmds}/${file}`);
     bot.cmds.set(c.name, c);
