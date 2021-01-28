@@ -17,7 +17,7 @@ bot.on("message", (msg) => {
   let args = msg.content.slice(config.prefix.length).split(" ");
   let cmd = args[0].toLowerCase();
 
-  
+  msg.reply("im working so far");
 });
 
 bot.login(process.env.TOKEN);
