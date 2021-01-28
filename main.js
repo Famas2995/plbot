@@ -21,10 +21,14 @@ bot.on("message", (msg) => {
   if (!msg.content.startsWith(config.prefix) || msg.author.bot) return;
 
   // split the message into arguments aka keywords
-  let args = msg.content.slice(config.prefix.length).split(" ");
+  let args = msg.content.trim().slice(config.prefix.length).split(" ");
   let cmd = args[0].toLowerCase();
 
-  bot.cmds.get(cmd).run(msg, args);
+  try {
+    bot.cmds.get(cmd).run(msg, args);
+  } catch (e) {
+    msg.reply(`error!\n${e}`);
+  }
 });
 
 bot.login(process.env.TOKEN);
