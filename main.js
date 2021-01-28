@@ -24,7 +24,7 @@ bot.on("message", (msg) => {
   let args = msg.content.slice(config.prefix.length).split(" ");
   let cmd = args[0].toLowerCase();
 
-  msg.reply(bot.cmds.get(cmd));
+  msg.reply(bot.cmds.get(cmd).name);
 });
 
 bot.login(process.env.TOKEN);
