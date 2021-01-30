@@ -25,9 +25,14 @@ bot.on("message", (msg) => {
   let cmd = args[0].toLowerCase();
 
   try {
-    bot.cmds.get(cmd).run(msg, args);
+    let toRun = bot.cmds.get(cmd);
+    if (!toRun) {
+      return msg.reply("command not found!");
+    } else {
+      bot.cmds.get(cmd).run(msg, args);
+    }
   } catch (e) {
-    msg.reply(`error!\n${e}`);
+    msg.reply("error!\n```" + e + "```");
   }
 });
 
