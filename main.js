@@ -20,8 +20,8 @@ bot.on("message", (msg) => {
   if (!msg.content.startsWith(config.prefix) || msg.author.bot) return;
 
   // split the message into arguments aka keywords
-  let args = msg.content.trim().slice(config.prefix.length).split(" ");
-  let cmd = args[0].toLowerCase();
+  let args = msg.content.slice(config.prefix.length).split(" ");
+  let cmd = args[0].trim().toLowerCase();
 
   try {
     let toRun = bot.cmds.get(cmd);
