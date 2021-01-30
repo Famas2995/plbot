@@ -10,7 +10,7 @@ const config = require("./config.json");
 
 // im testing shit out so dont mind the bad code
 bot.once("ready", () => {
-  let files = readdirSync(config.cmds).filter(file => file.endsWith(".js"));
+  let files = readdirSync(config.cmds).filter(file: string => file.endsWith(".js"));
   for (let file of files) {
     let c = require(`${config.cmds}/${file}`);
     bot.cmds.set(c.name, c);
@@ -19,7 +19,7 @@ bot.once("ready", () => {
   bot.user.setActivity("PAHC's Lounge | p!", { type: "LISTENING" });
 });
 
-bot.on("message", (msg) => {
+bot.on("message", (msg: object | null) => {
   // ignore bots and messages without a prefix
   if (!msg.content.startsWith(config.prefix) || msg.author.bot) return;
 
