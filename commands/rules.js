@@ -4,8 +4,9 @@ module.exports = {
   name: "rules",
   desc: "shows you server rules or a specific rule",
   run: (msg, args) => {
+  	let rule = args[1]; // rule number
     // if there's a rule number provided
-    if (args[1]) msg.reply(rules[args[1]--]);
+    if (rule) msg.reply(rules[rule - 1]);
     // just show the rules
     else msg.reply(rules.join("\n\n"));
   }
