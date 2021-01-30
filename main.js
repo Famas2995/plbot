@@ -12,7 +12,6 @@ bot.once("ready", () => {
     bot.cmds.set(c.name, c);
   }
 
-  console.log(bot.cmds);
   bot.user.setActivity("PAHC's Lounge | p!", { type: "LISTENING" });
 });
 
@@ -29,7 +28,9 @@ bot.on("message", (msg) => {
     if (!toRun) {
       return msg.reply("command not found!");
     } else {
-      bot.cmds.get(cmd).run(msg, args);
+      bot.cmds.get(cmd).run(
+        msg, args, bot // what commands can use
+      );
     }
   } catch (e) {
     msg.reply("error!\n```" + e + "```");
