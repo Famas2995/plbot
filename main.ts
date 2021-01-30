@@ -1,3 +1,7 @@
+// deno is funny
+import { createRequire } from "https://deno.land/std/node/module.ts";
+const require = createRequire(import.meta.url);
+
 const { readdirSync } = require("fs");
 const { Client,Collection } = require("discord.js");
 const bot = new Client();
