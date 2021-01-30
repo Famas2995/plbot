@@ -5,6 +5,6 @@ module.exports = {
   desc: "display a lot of information about the bot",
   run: (msg, args, bot) => {
     // very messy but idc lolll
-    msg.reply(`${Date.now() - message.createdTimestamp}ms\n\n**nerdy info**\nfree mem: ${os.freemem()}\nuptime: ${process.uptime()}\nnodejs version:${process.version}`);
+    msg.reply(`${Date.now() - msg.createdTimestamp}ms\n\n**nerdy info**\nfree mem: ${os.freemem()}\nuptime: ${process.uptime()}\nnodejs version:${process.version}`);
   }
 }
