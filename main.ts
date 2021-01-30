@@ -19,7 +19,7 @@ bot.once("ready", () => {
   bot.user.setActivity("PAHC's Lounge | p!", { type: "LISTENING" });
 });
 
-bot.on("message", (msg: {}) => {
+bot.on("message", (msg: any) => {
   // ignore bots and messages without a prefix
   if (!msg.content.startsWith(config.prefix) || msg.author.bot) return;
 
