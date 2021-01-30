@@ -21,4 +21,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm install eslint --save-dev
-    - run: eslint .
+    - run: ./node_modules/.bin/eslint .
