@@ -4,7 +4,7 @@ const config = require("../config.json");
 
 module.exports = (bot) => {
   // get all files with js code
-  let files = readdirSync(`../${config.cmds}`).filter(file => file.endsWith(".js"));
+  let files = readdirSync(`./${config.cmds}`).filter(file => file.endsWith(".js"));
     for (let file of files) {
       // require them and add to commands
       let c = require(`../${config.cmds}/${file}`);
