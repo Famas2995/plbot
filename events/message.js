@@ -1,4 +1,5 @@
 // discord.js events, emitted when a message is sent
+const config = require("../config.json");
 
 module.exports = async (msg, bot) => {
   // ignore bots and messages without a prefix
