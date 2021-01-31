@@ -11,10 +11,6 @@ module.exports = (bot) => {
     bot.cmds.set(c.name, c);
   }
 
-  // fetch all members from pahcs lounge
-  guild.members.fetch("763475376428154920")
-    .then().catch(console.error);
-
   // fancy status
   bot.user.setActivity("PAHC's Lounge | p!help", { type: "LISTENING" });
 }
