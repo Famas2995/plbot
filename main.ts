@@ -6,7 +6,7 @@ const require = createRequire(import.meta.url);
 import Discord from "https://cdn.skypack.dev/pin/discord.js@v12.5.1-zBMhEZtbJvzdMr78PlKZ/min/discordjs.js";
 
 // my own types
-import { Command } from "./types/command.ts"
+import { Command } from "./types/index.d.ts"
 
 // variables
 const bot: any = new Discord.Client();
