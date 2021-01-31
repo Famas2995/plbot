@@ -1,6 +1,6 @@
 // discord.js events, emitted when a message is sent
 
-module.exports = (msg, bot) => {
+module.exports = async (msg, bot) => {
   // ignore bots and messages without a prefix
   if (!msg.content.startsWith(config.prefix) || msg.author.bot) return;
 
