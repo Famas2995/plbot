@@ -11,7 +11,7 @@ module.exports = {
     });
     if (!allowed) return;
 
-    let code = args.shift(1).join(" ");
-    msg.reply(eval(code));
+    let code = args.shift();
+    msg.reply(eval(code.join(" ")));
   }
 }
