@@ -3,7 +3,7 @@ const { owners } = require("../config.json");
 module.exports = {
   name: "eval",
   desc: "evaluate code on the server (very sneaky)",
-  run: (msg, args, bot) => {
+  run: async (msg, args, bot) => {
     // check if its sent by a bot owner
     let allowed = false;
     owners.forEach((owner) => {

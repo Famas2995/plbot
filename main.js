@@ -15,7 +15,7 @@ bot.once("ready", () => {
   bot.user.setActivity("PAHC's Lounge | p!", { type: "LISTENING" });
 });
 
-bot.on("message", (msg) => {
+bot.on("message", async (msg) => {
   // ignore bots and messages without a prefix
   if (!msg.content.startsWith(config.prefix) || msg.author.bot) return;
 
@@ -28,7 +28,7 @@ bot.on("message", (msg) => {
     if (!toRun) {
       return msg.reply("command not found!");
     } else {
-      bot.cmds.get(cmd).run(
+      await bot.cmds.get(cmd).run(
         msg, args, bot // what commands can use
       );
     }
