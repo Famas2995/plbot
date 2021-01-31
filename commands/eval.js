@@ -12,6 +12,7 @@ module.exports = {
     if (!allowed) return;
 
     let code = args.shift();
+    msg.reply(code);
     msg.reply(eval(code.join(" ")));
   }
 }
