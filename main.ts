@@ -11,7 +11,6 @@ import { Command } from "./types/index.d.ts"
 // variables
 const bot: any = new Discord.Client();
 bot.cmds = new Discord.Collection();
-let commands: RBTree<Command> = new RBTree();
 const config: any = require("./config.json");
 
 /*
