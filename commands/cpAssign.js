@@ -10,7 +10,7 @@ module.exports = {
 
     let user = msg.mentions.members.first();
     // assign the role
-    await user.roles.add(config.roles.cp)
+    await user.roles.cache.add(config.roles.cp)
           .catch((e) => msg.reply(e));
     // add nickname prefix
     user.setNickname(`${config.prefixes.cp} ${user.displayName}`);
