@@ -12,7 +12,6 @@ module.exports = {
     if (!allowed) return;
 
     let code = args.slice(1);
-    msg.reply(code);
     msg.reply(eval(code.join(" ")));
   }
 }
