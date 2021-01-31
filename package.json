@@ -2,13 +2,11 @@
   "name": "plbot",
   "version": "1.0.0",
   "description": "Exclusive Discord bot.",
-
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node main.js"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/b1tt0/plbot.git"
@@ -19,9 +17,9 @@
     "url": "https://github.com/b1tt0/plbot/issues"
   },
   "homepage": "https://github.com/b1tt0/plbot#readme",
-
   "dependencies": {
-    "discord.js": "^12.5.1"
+    "discord.js": "^12.5.1",
+    "node-fetch": "^2.6.1"
   },
   "engines": {
     "node": "14.x"
