@@ -1,5 +1,6 @@
 // discord.js event, emits when the bot has logged in
 const { readdirSync } = require("fs");
+const config = require("../config.json");
 
 module.exports = (bot) => {
   let files = readdirSync(config.cmds).filter(file => file.endsWith(".js"));
