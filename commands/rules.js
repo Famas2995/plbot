@@ -1,13 +1,10 @@
-import { createRequire } from "https://deno.land/std/node/module.ts";
-const require = createRequire(import.meta.url);
-
 const { rules } = require("../util/rules.json");
 
 module.exports = {
   name: "rules",
   desc: "shows you server rules or a specific rule",
   run: (msg, args, bot) => {
-  	let rule: number = args[1];
+  	let rule = args[1]; // rule number
     // if there's a rule number provided
     if (rule) msg.reply(rules[rule - 1]);
     // just show the rules
