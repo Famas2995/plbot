@@ -6,7 +6,7 @@ module.exports = {
     if (cmd) return msg.reply(`**${cmd.name}**: ${cmd.desc}`);
     // list all commands
     let full = "";
-    bot.cmds.forEach((cmd) => full += `${cmd} `);
+    bot.cmds.forEach((cmd) => full += `${cmd.name} `);
 
     msg.reply(full);
   }
