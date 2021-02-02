@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# check if its up to date
+git checkout master
+git fetch origin master
+git rebase -i origin/master
+
+# push to github
+git push origin master
