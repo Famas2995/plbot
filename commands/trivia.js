@@ -9,6 +9,6 @@ module.exports = {
     let res = await fetch(url);
     let data = await res.json();
 
-    await msg.reply(data.results[0].question);
+    await msg.reply(`${data.results[0].question} (answer: ||${data.results[0].correct_answer}||)`);
   }
 }
