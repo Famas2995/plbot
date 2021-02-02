@@ -10,6 +10,8 @@ module.exports = {
     let str = `ram used: ${mem}mb\n`
       + `node version: ${process.version}\n`
       + `uptime: ${Math.floor(process.uptime())}\n\n`
-      + `the bot is open source! https://github.com/b1tt0/plbot`
+      + `**the bot is open source!** https://github.com/b1tt0/plbot`;
+
+    msg.reply(str);
   }
 }
