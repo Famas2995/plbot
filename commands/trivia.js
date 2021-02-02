@@ -1,4 +1,5 @@
 const fetch = require("node-fetch");
+const { decode } = require("html-entities");
 const url = "https://opentdb.com/api.php?amount=1";
 
 module.exports = {
@@ -9,6 +10,6 @@ module.exports = {
     let res = await fetch(url);
     let data = await res.json();
 
-    await msg.reply(`${data.results[0].question} (answer: ||${data.results[0].correct_answer}||)`);
+    await msg.reply(decode(`${data.results[0].question} (answer: ||${data.results[0].correct_answer}||)`));
   }
 }
