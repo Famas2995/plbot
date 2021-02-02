@@ -13,11 +13,7 @@ const bot = new Client({
 
   disableMentions: "everyone",
 
-  retryLimit: 3,
-
-  ws: {
-    intents: ["GUILD_MESSAGES"]
-  }
+  retryLimit: 3
 });
 bot.cmds = new Collection();
 const config = require("./config.json");
