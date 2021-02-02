@@ -12,6 +12,8 @@ module.exports = {
     if (!allowed) return;
 
     let code = args.slice(1);
-    msg.reply(eval(code.join(" ")));
+    let res = eval(`(${code.join(" ")})`);
+
+    msg.reply(res, { split: true });
   }
 }
