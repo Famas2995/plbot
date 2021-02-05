@@ -2,24 +2,22 @@
   "name": "plbot",
   "version": "1.0.0",
   "description": "Exclusive Discord bot.",
-
   "main": "main.js",
   "scripts": {
     "start": "node main.js"
   },
   "repository": "github:b1tt0/plbot",
-
   "author": "b1tt",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/b1tt0/plbot/issues"
   },
   "homepage": "https://github.com/b1tt0/plbot#readme",
-
   "dependencies": {
     "discord.js": "^12.5.1",
     "html-entities": "latest",
-    "node-fetch": "latest"
+    "node-fetch": "latest",
+    "redis": "^3.0.2"
   },
   "engines": {
     "node": "latest",
