@@ -7,7 +7,7 @@ module.exports = async (msg, bot) => {
   let prefixRegex = new RegExp(
     `^(${config.botPrefixes.join('|')})`
   );
-  let prefix = msg.content.match(prefixRegex);
+  let [prefix = 0] = msg.content.match(prefixRegex);
   if (!prefix) return;
 
   // split the message into arguments aka keywords
