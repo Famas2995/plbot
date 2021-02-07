@@ -7,12 +7,12 @@ module.exports = async (msg, bot) => {
   let prefixRegex = new RegExp(
     `^(${config.botPrefixes.join('|')})`
   );
-  let [prefix = 0] = msg.content.match(prefixRegex);
+  let prefix = msg.content.match(prefixRegex);
   if (!prefix) return;
 
   // split the message into arguments aka keywords
   let args = msg.content
-                .slice(prefix.length)
+                .slice(prefix[0].length)
                 .trim()
                 .split(" ");
   let cmd = args[0].toLowerCase();
