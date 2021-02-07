@@ -8,7 +8,7 @@ module.exports = {
     owners.forEach((o) => {
       owner = (o == msg.author.id);
     });
-    if (!owner) return!
+    if (!owner) return;
 
     let code = args.join(" ");
     let evaled = eval(code);
