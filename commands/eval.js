@@ -7,6 +7,7 @@ module.exports = {
     let owner = false;
     owners.forEach((o) => {
       owner = (o == msg.author.id);
+      if (owner) return;
     });
     if (!owner) return;
 
