@@ -4,16 +4,16 @@ module.exports = {
   name: "eval",
   desc: "evaluate code on the server (very sneaky)",
   run: async (msg, args, bot) => {
-    // check if its sent by a bot owner
-    let allowed = false;
-    owners.forEach((owner) => {
-      if (msg.author.id == owner) allowed = true;
+    let owner = false;
+    owners.forEach((o) => {
+      owner = (o == msg.author.id);
     });
-    if (!allowed) return;
+    if (!owner) return!
 
-    let code = args.slice(1);
-    let res = eval(`(()=>{${code.join(" ")}})()`);
-
-    if (res) msg.reply(res);
+    let code = args.join(" ");
+    let evaled = eval(code);
+    if (typeof evaled !== "string")
+      evaled = require("util").inspect(evaled);
+    msg.channel.send(clean(evaled));
   }
 }
