@@ -2,11 +2,20 @@
 const config = require("../config.json");
 
 module.exports = async (msg, bot) => {
-  // ignore bots and messages without a prefix
-  if (!msg.content.startsWith(config.prefix) || msg.author.bot) return;
+  let hasPrefix = false;
+  if (msg.author.bot) return; // ignore bots
+  // loop through all prefixes
+  config.botPrefixes.forEach((p) => {
+    hasPrefix = msg.content.startsWith(p);
+    if (hasPrefix) return;
+  });
+  if (!hasPrefix) return;
 
   // split the message into arguments aka keywords
-  let args = msg.content.slice(config.prefix.length).trim().split(" ");
+  let args = msg.content
+                .slice(config.prefix.length)
+                .trim()
+                .split(" ");
   let cmd = args[0].toLowerCase();
 
   try {
