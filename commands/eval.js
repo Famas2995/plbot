@@ -12,8 +12,10 @@ module.exports = {
 
     let code = args.join(" ");
     let evaled = eval(code);
+
     if (typeof evaled !== "string")
       evaled = require("util").inspect(evaled);
-    msg.channel.send(clean(evaled));
+
+    msg.channel.send(evaled);
   }
 }
