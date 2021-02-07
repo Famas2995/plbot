@@ -4,10 +4,10 @@ const config = require("../config.json");
 module.exports = async (msg, bot) => {
   if (msg.author.bot) return; // ignore bots
   // multiple prefixes
-  let prefix = config.botPrefixes.find(
-    (p) => msg.content.startsWith(p)
+  let prefixRegex = new RegExp(
+    `^(${config.botPrefixes.join('|')})`
   );
-  if (!prefix) return;
+  let prefix = msg.content.match(prefixRegex);
 
   // split the message into arguments aka keywords
   let args = msg.content
