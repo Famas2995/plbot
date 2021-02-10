@@ -1,0 +1,7 @@
+# install all dependencies
+npm ci
+
+# get eslint
+npm install eslint --save-dev
+# run it on all js files
+./node_modules/.bin/eslint .
