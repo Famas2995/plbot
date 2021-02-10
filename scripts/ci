@@ -1,10 +1,10 @@
 # update npm to the most recent version
-npm install -g npm
+npm i -g npm
 
 # install all dependencies
 npm ci
 
 # get eslint
-npm install eslint --save-dev
+npm install -D eslint
 # run it on all js files
 ./node_modules/.bin/eslint .
