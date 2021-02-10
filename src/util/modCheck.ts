@@ -1,5 +1,6 @@
-const { roles } = require("../config.json");
+import { roles } from "../config.json";
+import { User } from "discord.js";
 
-module.exports = (user) => {
+export function (user: User): boolean {
   return user.roles.cache.has(roles.mod);
 }
