@@ -15,7 +15,7 @@
   "homepage": "https://github.com/b1tt0/plbot#readme",
   "dependencies": {
     "discord.js": "^12.5.1",
-    "html-entities": "latest",
+    "html-entities": "^2.1.0",
     "node-fetch": "latest",
     "redis": "^3.0.2"
   },

@@ -1,3 +1,6 @@
+# update npm to the most recent version
+npm install -g npm
+
 # install all dependencies
 npm ci
 
