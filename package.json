@@ -20,7 +20,7 @@
     "redis": "^3.0.2"
   },
   "engines": {
-    "node": "latest",
-    "npm": "latest"
+    "node": "15.8.0",
+    "npm": "7.5.3"
   }
 }
