@@ -1,12 +1,14 @@
-module.exports = {
+import { Message } from "discord.js";
+
+export {
   name: "help",
   desc: "show all commands or info on a specific commamd",
-  run: async (msg, args, bot) => {
-    let cmd = bot.cmds.get(args[1]);
+  run: async (msg: Message, args: string[], bot): void => {
+    let cmd: string = bot.cmds.get(args[1]);
     if (cmd) return msg.reply(`**${cmd.name}**: ${cmd.desc}`);
     // list all commands
-    let full = "";
-    bot.cmds.forEach((cmd) => full += `${cmd.name} `);
+    let full: string = "";
+    bot.cmds.forEach(cmd => full += `${cmd.name} `);
 
     msg.reply(full);
   }

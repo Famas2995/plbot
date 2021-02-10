@@ -1,10 +1,13 @@
 // events
-const onReady   = require("./events/ready");
-const onMessage = require("./events/message")
+import "./events/ready" as onReady;
+import "./events/message" as onMessage;
+
+// config
+import "./config.json" as config;
 
 // dependencies
-const { Client,Collection } = require("discord.js");
-const bot = new Client({
+import "discord.js" as Discord;
+const bot: Discord.Client = new Discord.Client({
   // cache n shit
   messageCacheMaxSize      : 10,
   messageCacheLifetime     : 5,
@@ -15,10 +18,11 @@ const bot = new Client({
 
   retryLimit: 3
 });
-bot.cmds = new Collection();
-const config = require("./config.json");
 
+bot.cmds = new Discord.Collection();
+
+// listen to events
 bot.once("ready", () => onReady(bot));
-bot.on("message", async msg => onMessage(msg, bot));
+bot.on("message", async msg: Discord.Message => onMessage(msg, bot));
 
 bot.login(process.env.TOKEN);

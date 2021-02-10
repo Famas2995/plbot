@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Exclusive Discord bot.",
   "main": "main.js",
+  "types": "./src/types/index.d.ts",
   "scripts": {
     "start": "node main.js"
   },
