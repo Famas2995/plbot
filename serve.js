@@ -3,7 +3,8 @@ const http = require("http");
 const serve = require("serve-static")("./public");
 
 const server = http.createServer((req, res) => {
-  serve(req, res);  
+  serve(req, res);
+  console.log(req);
 });
 
-server.listen(config.port);
+server.listen(process.env.PORT || config.port);
