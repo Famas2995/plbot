@@ -20,15 +20,14 @@ const config = require("./config.json");
 
 // server stuff
 const http = require("http");
-const fs = require("fs");
+const serve = require("serve-static")("./public");
 const server = http.createServer((req, res) => {
-  res.writeHead(200, {"content-type": "text/html"});
-  fs.createReadStream("./public/index.html").pipe(res);
+  serve(req, res);  
 });
 
 bot.once("ready", () => {
   onReady(bot);
-  server.listen(process.env.PORT || 8080);
+  server.listen(8080);
 });
 
 bot.on("message", async msg => onMessage(msg, bot));

@@ -17,7 +17,8 @@
     "discord.js": "^12.5.1",
     "html-entities": "^2.1.0",
     "node-fetch": "latest",
-    "redis": "^3.0.2"
+    "redis": "^3.0.2",
+    "serve-static": "^1.14.1"
   },
   "engines": {
     "node": "15.8.0",
