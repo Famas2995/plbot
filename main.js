@@ -1,6 +1,6 @@
 // events
 const onReady   = require("./events/ready");
-const onMessage = require("./events/message")
+const onMessage = require("./events/message");
 
 // dependencies
 const { Client,Collection } = require("discord.js");
@@ -18,7 +18,19 @@ const bot = new Client({
 bot.cmds = new Collection();
 const config = require("./config.json");
 
-bot.once("ready", () => onReady(bot));
+// server stuff
+const http = require("http");
+const fs = require("fs");
+const server = http.createServer((req, res) => {
+  res.writeHead(200, {"content-type": "text/html"});
+  fs.createReadStream("./public/index.html").pipe(res);
+});
+
+bot.once("ready", () => {
+  onReady(bot);
+  server.listen(process.env.PORT || 80);
+});
+
 bot.on("message", async msg => onMessage(msg, bot));
 
 bot.login(process.env.TOKEN);
