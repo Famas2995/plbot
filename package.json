@@ -4,7 +4,7 @@
   "description": "Exclusive Discord bot.",
   "main": "main.js",
   "scripts": {
-    "start": "node main.js"
+    "start": "node serve.js"
   },
   "repository": "github:b1tt0/plbot",
   "author": "b1tt",

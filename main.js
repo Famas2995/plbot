@@ -18,18 +18,7 @@ const bot = new Client({
 bot.cmds = new Collection();
 const config = require("./config.json");
 
-// server stuff
-const http = require("http");
-const serve = require("serve-static")("./public");
-const server = http.createServer((req, res) => {
-  serve(req, res);  
-});
-
-bot.once("ready", () => {
-  onReady(bot);
-});
-
+bot.once("ready", () => onReady(bot));
 bot.on("message", async msg => onMessage(msg, bot));
 
 bot.login(process.env.TOKEN);
-server.listen(config.port);
