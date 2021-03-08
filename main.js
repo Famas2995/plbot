@@ -27,9 +27,9 @@ const server = http.createServer((req, res) => {
 
 bot.once("ready", () => {
   onReady(bot);
-  server.listen(8080);
 });
 
 bot.on("message", async msg => onMessage(msg, bot));
 
 bot.login(process.env.TOKEN);
+server.listen(config.port);
